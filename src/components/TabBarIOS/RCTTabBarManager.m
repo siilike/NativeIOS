@@ -66,6 +66,7 @@ RCT_EXPORT_VIEW_PROPERTY(barStyle, UIBarStyle)
 #endif	
 RCT_EXPORT_VIEW_PROPERTY(itemPositioning, UITabBarItemPositioning)	
 RCT_EXPORT_VIEW_PROPERTY(unselectedItemTintColor, UIColor)	
+RCT_EXPORT_VIEW_PROPERTY(onPressMore, RCTBubblingEventBlock)	
 
  #pragma mark - RCTUIManagerObserver	
 

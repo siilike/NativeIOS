@@ -14,8 +14,8 @@ const { requireNativeComponent } = require('react-native');
 
 import type {ViewProps} from 'ViewPropTypes';	
 import type {ColorValue} from 'StyleSheetTypes';	
-
 import type {NativeComponent} from 'ReactNative';	
+import type {SyntheticEvent} from 'CoreEventTypes';	
 
 type NativeProps = $ReadOnly<{|	
  ...ViewProps,	
@@ -26,6 +26,7 @@ type NativeProps = $ReadOnly<{|
  barStyle?: ?('default' | 'black'),	
  translucent?: ?boolean,	
  itemPositioning?: ?('fill' | 'center' | 'auto'),	
+ onPressMore?: ?(event: SyntheticEvent<null>) => mixed,	
 |}>;	
 
 type RCTTabBarNativeType = Class<NativeComponent<NativeProps>>;	

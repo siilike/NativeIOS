@@ -208,10 +208,16 @@
 
  - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController	
 {	
-  NSUInteger index = [tabBarController.viewControllers indexOfObject:viewController];	
-  RCTTabBarItem *tab = (RCTTabBarItem *)self.reactSubviews[index];	
-  if (tab.onPress) tab.onPress(nil);	
-  return NO;	
+	NSUInteger index = [tabBarController.viewControllers indexOfObject:viewController];
+
+	if(index != NSNotFound) {
+		RCTTabBarItem *tab = (RCTTabBarItem *)self.reactSubviews[index];
+		if (tab.onPress) tab.onPress(nil);
+	} else {
+		self.onPressMore(nil);
+	}
+
+	return NO;
 }	
 
  #endif	

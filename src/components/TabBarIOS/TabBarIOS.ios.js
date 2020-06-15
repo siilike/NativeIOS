@@ -18,6 +18,7 @@ const RCTTabBar = require('./RCTTabBarNativeComponent.js');
 
 import type {ViewProps} from 'ViewPropTypes';	
 import type {ColorValue} from 'StyleSheetTypes';	
+import type {SyntheticEvent} from 'CoreEventTypes';	
 
 type Props = $ReadOnly<{|	
  ...ViewProps,	
@@ -64,6 +65,8 @@ type Props = $ReadOnly<{|
   * it defaults to center.	
   */	
  itemPositioning?: ?('fill' | 'center' | 'auto'),	
+
+ onPressMore?: ?(event: SyntheticEvent<null>) => mixed,	
 |}>;	
 
 class TabBarIOS extends React.Component<Props> {	
@@ -79,7 +82,8 @@ class TabBarIOS extends React.Component<Props> {
        barTintColor={this.props.barTintColor}	
        barStyle={this.props.barStyle}	
        itemPositioning={this.props.itemPositioning}	
-       translucent={this.props.translucent !== false}>	
+       translucent={this.props.translucent !== false}
+       onPressMore={this.props.onPressMore}>	
        {this.props.children}	
      </RCTTabBar>	
    );	

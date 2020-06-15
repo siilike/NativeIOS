@@ -6,6 +6,9 @@
  */	
 
  #import <UIKit/UIKit.h>	
+ 
+#import <React/RCTComponent.h>	
+#import <React/RCTConvert.h>	
 
  @interface RCTTabBar : UIView	
 
@@ -16,6 +19,7 @@
 #if !TARGET_OS_TV	
 @property (nonatomic, assign) UIBarStyle barStyle;	
 #endif	
+@property (nonatomic, copy) RCTBubblingEventBlock onPressMore;	
 
  - (void)uiManagerDidPerformMounting;	
 
